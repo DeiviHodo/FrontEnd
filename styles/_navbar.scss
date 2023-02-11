@@ -1,0 +1,67 @@
+@import "colors";
+@import "media-queries";
+
+.navbar {
+  padding: 0rem calc((100ww - 1300px) / 2);
+  &__menuTop {
+    position: relative;
+    overflow: hidden;
+    background-color: $lightBrown;
+    justify-content: center;
+    padding: 5px 5px;
+
+    &--right {
+      background-color: $lightBrown;
+      float: right;
+      font-size: 16px;
+      padding-right: 40px;
+      border-color: transparent;
+      color: $light;
+    }
+    &--left {
+      background-color: $lightBrown;
+      padding-left: 40px;
+      color: $light;
+      float: left;
+      font-size: 16px;
+    }
+  }
+
+  &__menuBot {
+    width: 100%;
+    background-color: $light;
+    border-color: $light;
+    cursor: pointer;
+    display: flex;
+    padding-top: 13px;
+    padding-bottom: 5px;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-evenly;
+    text-align: center;
+
+    &--img {
+      position: relative;
+      background-image: url("../images/symbol.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 10vh;
+      width: 20vh;
+    }
+
+    &--links {
+      background-color: $light;
+      color: $lightBrown;
+      border: none;
+      font-weight: bold;
+      font-size: 10px;
+
+      &:hover {
+        color: $gray;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}

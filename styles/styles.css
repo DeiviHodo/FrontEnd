@@ -1,0 +1,124 @@
+.navbar {
+  padding: 0rem calc((100ww - 1300px) / 2);
+}
+.navbar__menuTop {
+  position: relative;
+  overflow: hidden;
+  background-color: #b07c4f;
+  justify-content: center;
+  padding: 5px 5px;
+}
+.navbar__menuTop--right {
+  background-color: #b07c4f;
+  float: right;
+  font-size: 16px;
+  padding-right: 40px;
+  border-color: transparent;
+  color: #f7f7f7;
+}
+.navbar__menuTop--left {
+  background-color: #b07c4f;
+  padding-left: 40px;
+  color: #f7f7f7;
+  float: left;
+  font-size: 16px;
+}
+.navbar__menuBot {
+  width: 100%;
+  background-color: #f7f7f7;
+  border-color: #f7f7f7;
+  cursor: pointer;
+  display: flex;
+  padding-top: 13px;
+  padding-bottom: 5px;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-evenly;
+  text-align: center;
+}
+.navbar__menuBot--img {
+  position: relative;
+  background-image: url("../images/symbol.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 10vh;
+  width: 20vh;
+}
+.navbar__menuBot--links {
+  background-color: #f7f7f7;
+  color: #b07c4f;
+  border: none;
+  font-weight: bold;
+  font-size: 10px;
+}
+.navbar__menuBot--links:hover {
+  color: #36454f;
+  transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.main {
+  position: relative;
+  background-image: url("../images/image.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+.main__container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: -12%;
+}
+.main__container--text {
+  color: #f7f7f7;
+  font-size: 14px;
+  line-height: 60px;
+  padding-bottom: 20%;
+}
+.main__table {
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  background-color: #36454f;
+  margin-left: 34px;
+  margin-right: 34px;
+  padding: 55px 0;
+}
+.main__table--text {
+  text-align: center;
+  padding-right: 20px;
+  font-size: 30px;
+  color: #f7f7f7;
+}
+.main__table--dropdown {
+  border: none;
+  text-align: left;
+  text-decoration: none;
+  font-size: 16px;
+  display: inline-block;
+  padding: 8px 52px;
+}
+.main__table--searchbtn {
+  border: none;
+  background-color: #b07c4f;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  padding: 8px 50px;
+  color: #f7f7f7;
+}/*# sourceMappingURL=styles.css.map */
