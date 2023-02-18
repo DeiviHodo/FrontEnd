@@ -1,4 +1,6 @@
+@import "footer";
 @import "navbar";
+@import "media-queries";
 
 * {
   box-sizing: border-box;
@@ -8,23 +10,22 @@
 }
 
 .main {
-  position: relative;
-  background-image: url("../images/image.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
+  height: 100%;
   width: 100%;
 
   &__container {
+    position: relative;
+    background-image: url("../images/image.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
-    height: 100%;
+    height: 650px;
     display: flex;
     text-align: center;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-bottom: -12%;
 
     &--text {
       color: $light;
@@ -32,41 +33,739 @@
       line-height: 60px;
       padding-bottom: 20%;
     }
-  }
-  &__table {
-    display: flex;
-    justify-content: center;
-    justify-content: space-evenly;
-    background-color: $gray;
-    margin-left: 34px;
-    margin-right: 34px;
-    padding: 55px 0;
 
-    &--text {
-      text-align: center;
+    &--table {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      justify-content: space-evenly;
+      background-color: $gray;
+      padding: 55px 100px;
 
-      padding-right: 20px;
-      font-size: 30px;
-      color: $light;
+      .text {
+        text-align: center;
+        padding-left: 10px;
+        padding-right: 5px;
+        font-size: 25px;
+        color: $light;
+      }
     }
 
-    &--dropdown {
+    .dropdown {
+      margin-left: 20px;
+      padding-right: 40px;
       border: none;
       text-align: left;
       text-decoration: none;
       font-size: 16px;
-
       display: inline-block;
-      padding: 8px 52px;
+      padding: 8px 82px;
     }
-    &--searchbtn {
+    .searchbtn {
+      margin-left: 20px;
       border: none;
       background-color: $lightBrown;
       font-size: 16px;
       text-align: center;
       text-decoration: none;
-      padding: 8px 50px;
+      padding: 8px 82px;
       color: $light;
+    }
+
+    @include tablet {
+      &--table {
+        display: none;
+      }
+
+      background-size: auto;
+
+      &--text {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+
+  &__second {
+    position: relative;
+    background-image: url("../images/school.png");
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: 50% 100%;
+    width: 100%;
+    min-height: 650px;
+    line-height: 40px;
+
+    .firstp::before {
+      content: "Kolegji Univeristar Qiriazi";
+      color: $lightBrown;
+    }
+    .firstp {
+      text-align: left;
+      color: $gray;
+      margin-top: 30px;
+      font-size: 26px;
+    }
+    .secondp {
+      margin-top: 30px;
+      color: $gray;
+      font-size: 14px;
+    }
+    h1 {
+      font-size: 40px;
+      color: $lightGray;
+    }
+
+    &--text {
+      padding-top: 60px;
+      padding-left: 90px;
+      line-height: 2em;
+      text-align: left;
+      width: 40%;
+      display: inline-block;
+    }
+
+    @include tablet {
+      background-size: 50% 100%;
+
+      &--text {
+        width: 50%;
+        padding: 25px 5px;
+        line-height: 25px;
+        font-size: 8px;
+        h1 {
+          line-height: 40px;
+        }
+      }
+    }
+  }
+
+  &__third {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-color: $white;
+    display: inline-flex;
+
+    &--header {
+      padding: 70px 70px;
+      line-height: 2em;
+      text-align: left;
+      width: 40%;
+
+      h1 {
+        font-size: 36px;
+        color: $gray;
+      }
+      h2 {
+        font-size: 36px;
+        color: $lightBrown;
+      }
+    }
+
+    .main__third--list {
+      width: 500px;
+      height: 370px;
+      background-color: $gray;
+      margin-top: 70px;
+      padding-bottom: 30px;
+
+      .link {
+        display: block;
+        background-color: $gray;
+        color: $light;
+        padding-top: 20px;
+        text-decoration: none;
+      }
+      a {
+        padding: 5px 20px;
+        i {
+          font-size: 8px;
+          margin-right: 10px;
+          color: $lightBrown;
+        }
+      }
+
+      p {
+        font-size: 24px;
+        color: $light;
+        font-weight: bold;
+        padding-left: 20px;
+        padding-top: 20px;
+      }
+    }
+    &--stats {
+      padding-left: 60px;
+      padding-right: 10px;
+      padding-top: 5px;
+      text-align: center left;
+      justify-content: center;
+      margin-top: 70px;
+      width: 20%;
+      height: 70%;
+      margin-bottom: 40px;
+      margin-right: 20px;
+      background-color: $lightGray;
+      h2 {
+        padding-top: 50px;
+        color: $lightBrown;
+        font-size: 26px;
+        font-weight: bold;
+      }
+      h1 {
+        padding-top: 15px;
+        color: $dark;
+        font-size: 60px;
+        font-weight: bold;
+      }
+      p {
+        line-height: 35px;
+        width: 90%;
+      }
+    }
+
+    @include tablet {
+      &--header {
+        padding: 70px 20px;
+        line-height: 2em;
+        text-align: left;
+        width: 40%;
+
+        h1 {
+          font-size: 26px;
+        }
+        h2 {
+          font-size: 26px;
+        }
+      }
+
+      .main__third--list {
+        width: 300px;
+        height: 220px;
+        margin-top: 70px;
+        padding-bottom: 10px;
+
+        .link {
+          text-decoration: none;
+        }
+        a {
+          padding: 5px 10px;
+          i {
+            font-size: 7px;
+          }
+        }
+
+        p {
+          font-size: 12px;
+        }
+      }
+      &--offer {
+        text-align: center left;
+        justify-content: center;
+        width: 25%;
+        padding-left: 20px;
+        padding-right: 10px;
+        padding-top: 5px;
+        h2 {
+          padding-top: 10px;
+          color: $lightBrown;
+          font-size: 18px;
+          font-weight: bold;
+        }
+        h1 {
+          padding-top: 15px;
+
+          font-size: 40px;
+        }
+        p {
+          line-height: 18px;
+          width: 90%;
+        }
+      }
+    }
+  }
+
+  &__fourth {
+    position: relative;
+    padding: 30px 70px;
+    height: 170px;
+
+    background-image: url("../images/student.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &--text {
+      color: $light;
+      text-align: left;
+      width: 33.33333%;
+      display: grid;
+
+      p {
+        padding-left: 22px;
+        line-height: 20px;
+        font-weight: 500;
+        margin-top: 10px;
+        text-align: left;
+        color: $dark;
+      }
+
+      i {
+        font-size: 12px;
+        margin-right: 10px;
+        color: $gray;
+      }
+    }
+    @include tablet {
+      margin-top: 50px;
+      background-size: auto;
+      &--text {
+        width: 60%;
+        grid-template: 1fr;
+        font-size: 13px;
+      }
+    }
+  }
+  &__fifth {
+    overflow: hidden;
+    padding: 0px 0px;
+    position: relative;
+    height: 800px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    &--text {
+      padding-left: 90px;
+      padding-top: 90px;
+      line-height: 32px;
+      text-align: left;
+      width: 100%;
+
+      .firstp::before {
+        font-weight: bold;
+        color: $lightBrown;
+        content: "Mirese erdhet ne Kolgegjit Universitar Qiriazi";
+      }
+      .firstp {
+        line-height: 35px;
+        margin-top: 10px;
+        font-size: 34px;
+        color: $gray;
+      }
+      .secondp {
+        width: 97%;
+        margin-top: 15px;
+        color: $darkGray;
+      }
+      h1 {
+        width: 70%;
+        line-height: 50px;
+        font-size: 48px;
+        color: $lightGray;
+      }
+    }
+
+    &--image {
+      padding-left: 70px;
+      padding-top: 90px;
+      display: block;
+      line-height: 19px;
+
+      .president-img {
+        position: 45% 70%;
+        height: 500px;
+        width: 100%;
+      }
+      h2 {
+        color: $gray;
+        font-size: 29px;
+        margin-top: 40px;
+      }
+      p {
+        margin-top: 20px;
+        font-size: 28px;
+        font-weight: bold;
+        color: $lightBrown;
+      }
+      p::before {
+        color: $gray;
+        content: "Presidenti";
+      }
+    }
+    @include tablet {
+      height: 700px;
+      &--text {
+        padding-left: 20px;
+        width: 100%;
+
+        h1 {
+          line-height: 20px;
+          width: 100%;
+          font-size: 20px;
+        }
+        .firstp {
+          line-height: 20px;
+          font-size: 10px;
+        }
+        .secondp {
+          line-height: 15px;
+          font-size: 8px;
+        }
+      }
+      &--image {
+        color: $lightGray;
+        display: grid;
+        grid-template-rows: 2fr;
+
+        h2 {
+          margin-top: 10px;
+          font-size: 18px;
+          margin-bottom: 10px;
+        }
+        p {
+          margin-top: 1px;
+          margin-bottom: 150px;
+          font-size: 12px;
+        }
+      }
+      .president-img {
+        width: 400px;
+        height: 500px;
+      }
+    }
+  }
+  &__sixth {
+    position: relative;
+    height: 700px;
+    width: auto;
+    background-color: $white;
+    background-image: url("../images/hall.jpg");
+    background-position: 30% 60%;
+    background-repeat: no-repeat;
+    background-size: 50% 65%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    &--text {
+      padding-top: 50px;
+      padding-left: 40px;
+      background-color: $light;
+      margin-top: 225px;
+      margin-left: 465px;
+      width: 38%;
+      height: 55%;
+      line-height: 35px;
+
+      h1 {
+        width: 95%;
+        color: $lightBrown;
+        font-weight: 900;
+      }
+      p {
+        font-size: 20px;
+        width: 85%;
+        margin-top: 25px;
+        margin-bottom: 30px;
+      }
+    }
+
+    &--button {
+      background-color: $lightBrown;
+      padding: 15px 45px;
+      text-decoration: none;
+      color: $light;
+      font-weight: bold;
+      font-size: 14px;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    @include tablet {
+      height: 300px;
+      width: 100%;
+      background-image: url("../images/hall.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      display: block;
+      background-size: 55% 65%;
+
+      &--text {
+        padding-top: 15px;
+        padding-left: 10px;
+        position: absolute;
+        right: 20px;
+        bottom: 30px;
+        background-color: $light;
+        width: 43%;
+        height: 50%;
+        line-height: 15px;
+
+        h1 {
+          width: 100%;
+          font-size: 10px;
+          color: $lightBrown;
+          font-weight: 900;
+        }
+        p {
+          font-size: 10px;
+          width: 100%;
+        }
+      }
+      &--button {
+        background-color: $lightBrown;
+
+        padding: 5px 10px;
+        text-decoration: none;
+        color: $light;
+        font-weight: bold;
+        font-size: 5px;
+        text-align: center;
+      }
+    }
+  }
+
+  &__seventh {
+    zoom: 1.25;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    height: 90%;
+    background-image: url("../images/background.jpg");
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: 23% 100%;
+    position: relative;
+    .text {
+      padding: 140px 70px;
+      line-height: 2em;
+      text-align: left;
+      display: inline-block;
+      h1 {
+        font-size: 40px;
+        color: $lightGray;
+      }
+      h3 {
+        font-size: 26px;
+        margin-top: 20px;
+        color: $lightBrown;
+      }
+      p {
+        padding-top: 50px;
+        margin-bottom: 20px;
+      }
+      a {
+        padding: 9px 35px;
+        background-color: $lightBrown;
+        font-size: 18px;
+        font-weight: 500;
+        color: $light;
+        text-decoration: none;
+      }
+    }
+
+    .image {
+      width: 49%;
+      height: 80%;
+      display: grid;
+
+      .scroll {
+        padding-left: 20px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        display: inline;
+
+        .btnprev {
+          color: $lightBrown;
+          background-color: $light;
+          border: 1px solid $lightBrown;
+          padding: 5px 10px;
+        }
+
+        .btnnext {
+          color: $light;
+          background-color: $lightBrown;
+          border: none;
+          padding: 5px 10px;
+        }
+      }
+
+      .slider--container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .slider-img {
+          margin-left: 20px;
+          width: 250px;
+          height: 300px;
+        }
+      }
+    }
+
+    @include tablet {
+      background-image: none;
+    }
+  }
+
+  &__blog {
+    text-align: center;
+    height: 800px;
+    background-color: $white;
+
+    .allbtn {
+      display: flex;
+      height: 130px;
+      justify-content: center;
+      align-items: center;
+      a {
+        background-color: $lightBrown;
+        display: inline-block;
+        text-decoration: none;
+        text-align: center;
+        font-size: 18px;
+        box-sizing: border-box;
+        border: 1px solid $lightBrown;
+        color: $light;
+        padding: 15px 55px;
+        font-weight: bolder;
+      }
+    }
+    &--content {
+      width: 100%;
+      .title {
+        width: 70%;
+        margin-left: 150px;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 50px;
+        h2 {
+          font-size: 45px;
+          color: $lightGray;
+        }
+        h3::after {
+          color: $gray;
+          content: "Lajme";
+        }
+        h3 {
+          font-size: 28px;
+          color: $lightBrown;
+        }
+      }
+      .cards {
+        padding-left: 30px;
+        padding-right: 70px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 2fr);
+
+        .card {
+          background-color: $white;
+          position: relative;
+          line-height: 20px;
+          width: 270px;
+          .slider-img {
+            width: 215px;
+            height: 175px;
+          }
+          .article {
+            margin-left: 20px;
+            text-align: center;
+            line-height: 25px;
+            align-items: center;
+
+            h6 {
+              color: $lightBrown;
+              font-weight: bold;
+            }
+            h5 {
+              font-size: 17px;
+              color: $gray;
+            }
+            p {
+              color: $darkGray;
+              font-size: 14px;
+            }
+          }
+          .blog-view {
+            a {
+              display: inline-block;
+              text-decoration: none;
+              background-color: $white;
+              text-align: center;
+              font-size: 10px;
+              margin-top: 20px;
+              margin-bottom: 20px;
+              box-sizing: border-box;
+              border: 1.2px solid $lightBrown;
+              color: $lightBrown;
+              padding: 2px 25px;
+              font-weight: bolder;
+            }
+          }
+        }
+
+        .card--right {
+          background-color: $white;
+          position: relative;
+          display: grid;
+
+          .card {
+            background-color: $white;
+            display: flex;
+            width: 600px;
+            padding-bottom: 20px;
+            .slider-img {
+              height: 120px;
+              width: 180px;
+            }
+
+            .article {
+              width: 100%;
+              padding-left: 10px;
+              text-align: left;
+              align-items: left;
+              h6 {
+                color: $lightBrown;
+              }
+              h5 {
+                color: $gray;
+              }
+              p {
+                color: $darkGray;
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+    @include tablet {
+      overflow: hidden;
+
+      .cards {
+        .card {
+          padding-left: 0;
+          padding-right: 0;
+          .slider-img {
+            height: 120px;
+            width: 140px;
+          }
+          .article {
+            width: 70%;
+            p {
+              font-size: 10px;
+            }
+          }
+        }
+      }
+      .cards {
+        .card--right {
+          display: none;
+        }
+      }
     }
   }
 }
